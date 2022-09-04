@@ -13,8 +13,9 @@ function library:CreateWindow(text)
     local UIListLayout_2 = Instance.new("UIListLayout")
 
     Design.Name = "Design"
-    Design.Parent = game:WaitForChild("CoreGUI")
+    Design.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
     Design.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    Design.ResetOnSpawn = false
 
     WindowFrame.Name = "WindowFrame"
     WindowFrame.Parent = Design
@@ -325,6 +326,20 @@ function library:CreateWindow(text)
             end
         end)
     end)
+    end
+
+    function Window:CreateTextbox(path, text, placeholder)
+        TextBox.Name = "TextBox"
+        TextBox.Parent = HudTab[path.."hud"]
+        TextBox.BackgroundColor3 = Color3.fromRGB(77, 77, 77)
+        TextBox.Size = UDim2.new(1, 0, 0.142000005, 0)
+        TextBox.Font = Enum.Font.SourceSans
+        TextBox.TextColor3 = Color3.fromRGB(222, 222, 222)
+        TextBox.TextScaled = true
+        TextBox.TextSize = 14.000
+        TextBox.TextWrapped = true
+        TextBox.Text = text
+        TextBox.PlaceholderText = placeholder
     end
 
     function Window:CreateNotification(title, message)
