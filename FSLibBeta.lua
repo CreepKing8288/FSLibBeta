@@ -13,7 +13,7 @@ function library:CreateWindow(text)
     local UIListLayout_2 = Instance.new("UIListLayout")
 
     Design.Name = "Design"
-    Design.Parent = game:WaitForChild("CoreGUI")
+    Design.Parent = game.CoreGUI
     Design.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
     WindowFrame.Name = "WindowFrame"
